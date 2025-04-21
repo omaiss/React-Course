@@ -3,7 +3,11 @@ import { Header } from "./components/Header/Header";
 import CoreConcepts from "./components/CoreConcepts";
 import TabButton from "./components/TabButton";
 
-function App() {
+export default function App() {
+  function click() {
+    console.log('click');
+  }
+
   return (
     <div>
       <Header />
@@ -27,23 +31,14 @@ function App() {
           </h2>
           <menu>
             {/* can also use label for the button */}
-            <TabButton>
-              Components
-            </TabButton>
-            <TabButton>
-              JSX
-            </TabButton>
-            <TabButton>
-              Props
-            </TabButton>
-            <TabButton>
-              State
-            </TabButton>
+            <TabButton click={click}>  Components </TabButton>
+            <TabButton click={click}>  JSX </TabButton>
+            <TabButton click={click}>  Props </TabButton>
+            <TabButton click={click}>  State </TabButton>
           </menu>
+          Dynamic Content
         </section>
       </main>
     </div>
   );
 }
-
-export default App;
