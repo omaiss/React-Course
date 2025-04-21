@@ -13,7 +13,7 @@ function App() {
           <ul>
             <CoreConcepts {...CORE_CONCEPTS[0]} />
             <CoreConcepts {...CORE_CONCEPTS[1]} />
-            <CoreConcepts {...CORE_CONCEPTS[2]} />                        
+            <CoreConcepts {...CORE_CONCEPTS[2]} />
             <CoreConcepts
               title={CORE_CONCEPTS[3].title}
               description={CORE_CONCEPTS[3].description}
@@ -26,9 +26,18 @@ function App() {
             Examples
           </h2>
           <menu>
-          {/* can also use label for the button */}
+            {/* can also use label for the button */}
             <TabButton>
               Components
+            </TabButton>
+            <TabButton>
+              JSX
+            </TabButton>
+            <TabButton>
+              Props
+            </TabButton>
+            <TabButton>
+              State
             </TabButton>
           </menu>
         </section>
