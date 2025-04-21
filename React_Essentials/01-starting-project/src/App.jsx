@@ -1,6 +1,7 @@
 import { CORE_CONCEPTS } from "./data";
 import { Header } from "./components/Header/Header";
 import CoreConcepts from "./components/CoreConcepts";
+import TabButton from "./components/TabButton";
 
 function App() {
   return (
@@ -19,6 +20,17 @@ function App() {
               image={CORE_CONCEPTS[3].image}
             ></CoreConcepts>
           </ul>
+        </section>
+        <section>
+          <h2>
+            Examples
+          </h2>
+          <menu>
+          {/* can also use label for the button */}
+            <TabButton>
+              Components
+            </TabButton>
+          </menu>
         </section>
       </main>
     </div>
