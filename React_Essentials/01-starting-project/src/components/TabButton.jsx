@@ -6,9 +6,9 @@ export default function TabButton({children, click}) {
      return (
         // props.children the children will have the text between
         // componenets <Component> TEXT </Component> "TEXT" is children
-        <li>
+        <ul>
             <button onClick={click}>{children}</button>
-        </li>
+        </ul>
         // or use object destructuring {variablename}
     );
 }
