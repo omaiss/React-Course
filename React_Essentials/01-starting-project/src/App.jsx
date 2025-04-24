@@ -39,14 +39,16 @@ export default function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcepts {...CORE_CONCEPTS[0]} />
+            {CORE_CONCEPTS.map((concepItem) => 
+            <CoreConcepts key={concepItem.title} {...concepItem} />)}
+            {/* <CoreConcepts {...CORE_CONCEPTS[0]} />
             <CoreConcepts {...CORE_CONCEPTS[1]} />
             <CoreConcepts {...CORE_CONCEPTS[2]} />
             <CoreConcepts
               title={CORE_CONCEPTS[3].title}
               description={CORE_CONCEPTS[3].description}
               image={CORE_CONCEPTS[3].image}
-            ></CoreConcepts>
+            ></CoreConcepts> */}
           </ul>
         </section>
         <section id="examples">
@@ -55,10 +57,10 @@ export default function App() {
           </h2>
           <menu>
             {/* can also use label for the button */}
-            <TabButton click={() => click_fun('components')} > Components </TabButton>
-            <TabButton click={() => click_fun('jsx')}>  JSX </TabButton>
-            <TabButton click={() => click_fun('props')}>  Props </TabButton>
-            <TabButton click={() => click_fun('state')}>  State </TabButton>
+            <TabButton isSelected={selected_topic === 'components' ? true : false} click={() => click_fun('components')} > Components </TabButton>
+            <TabButton isSelected={selected_topic === 'jsx' ? true : false} click={() => click_fun('jsx')}>  JSX </TabButton>
+            <TabButton isSelected={selected_topic === 'props' ? true : false} click={() => click_fun('props')}>  Props </TabButton>
+            <TabButton isSelected={selected_topic === 'state' ? true : false} click={() => click_fun('state')}>  State </TabButton>
           </menu>
           {/* can't use regular variable for dynamic content, you need to tell React to reevaluate the code 
           urself, it doesn't auto check {tabContent}*/}
