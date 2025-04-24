@@ -10,7 +10,7 @@ Each branch in this repository corresponds to a specific module or concept from 
 
 | Module | Branch | Description |
 |--------|--------|-------------|
-| 1️⃣ React Essentials | [`react_essentials`](https://github.com/omaiss/React-Course.git/tree/React_Essentials) | Introduction to React, JSX, props, state, events, and component structure |
+| 1️⃣ React Essentials | [`react_essentials`](https://github.com/omaiss/React-Course/tree/React_Essentials) | Introduction to React, JSX, props, state, events, and component structure |
 | 2️⃣ React Styling | [`react_styling`](https://github.com/omaiss/React-Course/tree/react_styling) | Styling techniques including CSS Modules, Styled Components, and more |
 | 3️⃣ Working with Forms | [`react_forms`](https://github.com/omaiss/React-Course/tree/react_forms) | Handling forms, user input, and validation in React |
 | 4️⃣ State Management | [`state_management`](https://github.com/omaiss/React-Course/tree/state_management) | Deep dive into useState, useEffect, and lifting state |
