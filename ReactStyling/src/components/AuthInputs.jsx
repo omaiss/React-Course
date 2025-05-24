@@ -1,4 +1,28 @@
 import { useState } from "react";
+import CustomInput from "./AuthInputsStyles";
+import {styled} from "styled-components";
+
+const ControlContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+`;
+
+const StyledButton = styled.button`
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #f0b322;
+  border-radius: 6px;
+  border: none;
+
+  &:hover {
+    background-color: #f0920e;
+  }
+`;
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -22,38 +46,32 @@ export default function AuthInputs() {
 
   return (
     <div id="auth-inputs">
-      <div className="controls">
-        <p>
-          <label className={`label ${emailNotValid ? "invalid" : ''}`}>
-            Email
-          </label>
-          <input
-            type="email"
-            // style={{
-            //   backgroundColor: emailNotValid ? "#fed2d2" : '#d1d5db',
-            // }}
-            className={emailNotValid ? "invalid" : undefined}
-            onChange={(event) => handleInputChange("email", event.target.value)}
-          />
-        </p>
-        <p>
-          <label className={`label ${emailNotValid ? "invalid" : ''}`}>Password</label>
-          <input
-            type="password"
-            className={passwordNotValid ? "invalid" : undefined}
-            onChange={(event) =>
-              handleInputChange("password", event.target.value)
-            }
-          />
-        </p>
-      </div>
+      <ControlContainer>
+        <CustomInput
+          labels = 'Email'
+          type="email"
+          // style={{
+          //   backgroundColor: emailNotValid ? "#fed2d2" : '#d1d5db',
+          // }}
+          invalid={emailNotValid}
+          onChange={(event) => handleInputChange("email", event.target.value)}
+        />
+        <CustomInput
+          labels = 'Password'
+          type="password"
+          invalid={emailNotValid}
+          onChange={(event) =>
+            handleInputChange("password", event.target.value)
+          }
+        />
+      </ControlContainer>
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className="button" onClick={handleLogin}>
+        <StyledButton className="button" onClick={handleLogin}>
           Sign In
-        </button>
+        </StyledButton>
       </div>
     </div>
   );
